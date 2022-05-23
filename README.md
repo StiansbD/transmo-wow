@@ -16,3 +16,4 @@ Lien utile :
 - Doc : https://docs.google.com/document/d/1V-vaspDQhuLu6d0tG75DvkJsPRxxvk5zy3R8lvgm0Wk/edit
 - Bulma (classes CSS) : https://bulma.io/documentation/
 - GitHub : https://github.com/StiansbD/Transmo_WoW
+- Commande Git : https://gist.github.com/aquelito/8596717

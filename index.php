@@ -4,6 +4,8 @@
     $date = date("Y-m-d H:i:s");
 
     include './src/db.php';
+
+    $response = $db->query('SELECT * FROM transmo');
 ?>
 <html>
     <head>

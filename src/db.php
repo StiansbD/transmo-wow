@@ -3,36 +3,30 @@
     const DB_SERVER = "localhost";
     const DB_USER = "root";
     const DB_PASSWORD = "";
+    const DB_NAME = "db_transmo";
 
-    // connection à la base de données
-    $link = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD);
-
-    if ($mysqli->connect_errno) 
+    try 
     {
-        print'
+        // connection à la base de données
+        $db = new PDO(
+            'mysql: host='.DB_SERVER.
+            ';dbname=' .DB_NAME.
+            ';charset=utf8', DB_USER, DB_PASSWORD
+        );
+
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        print '
             <script>
-                console.log("Erreur de la connexion à MySQL '. $mysqli -> connect_error .'");
+                console.log("Connexion à MySQL réussie !");
             </script>
         ';
-        exit();
     }
-
-    print '
-        <script>
-            console.log("Connexion à MySQL réussie !");
-        </script>
-    ';
-
-    if ($result = $mysqli->query("SELECT * FROM `transmo`"))
+    catch (Exception $e)
     {
-        while ($row = $result->fetch_row())
-        {
-            printf(
-                "%s (%s)\n", $row[0], $row[1]
-            );
-            $result->free_result();
-        }
+        die ('Error : '. $e->getMessage().'<br>');
     }
-    $mysqli->close();
+    
+
 
 ?>

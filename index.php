@@ -35,7 +35,7 @@
                             </div>
 
                             <div class="content">
-                                Quoi comment ça ?? <a>@toutou</a>.
+                                Quoi comment ?? <a>@toutou</a>.
                                 <a href="#">#css</a> <a href="#">#responsive</a>
                                 <br>
                                 <time datetime="2016-1-1"><?php print $date ?></time>
